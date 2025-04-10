@@ -14,7 +14,7 @@ const builder = new addonBuilder({
   types: ["movie", "series"]
 });
 
-const TMDB_KEY = "5e5da432e96174227b25086fe8637985"; // Troque pela sua chave TMDb
+const TMDB_KEY = "5e5da432e96174227b25086fe8637985";
 
 builder.defineCatalogHandler(async ({ type, id }) => {
   let url;
@@ -55,13 +55,4 @@ builder.defineMetaHandler(async ({ id }) => {
   };
 });
 
-const PORT = process.env.PORT || 7000;
-builder.getInterface().then((addonInterface) => {
-  require("http")
-    .createServer((req, res) => {
-      addonInterface(req, res);
-    })
-    .listen(PORT, () => {
-      console.log("Addon rodando na porta " + PORT);
-    });
-});
+module.exports = builder.getInterface();
