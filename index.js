@@ -14,7 +14,7 @@ const builder = new addonBuilder({
   types: ["movie", "series"]
 });
 
-const TMDB_KEY = "SUA_CHAVE_TMDB_AQUI"; // Troque pela sua chave TMDb
+const TMDB_KEY = "5e5da432e96174227b25086fe8637985"; // Troque pela sua chave TMDb
 
 builder.defineCatalogHandler(async ({ type, id }) => {
   let url;
